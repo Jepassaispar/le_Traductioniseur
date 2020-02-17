@@ -35,7 +35,7 @@ Recopiez la ligne suivante dans votre .env tout en remplaçant [PATH] par le che
 GOOGLE_APPLICATION_CREDENTIALS="[PATH]"
 
 ## 5 - INSERER 500 VERBES DE LA LISTE DANS VOTRE DB
-Vous pouvez maintenant insérer 500 verbes aléatoires dans la database mongodb de votre localhost en utilsant la commande suivante : <npm run seeds>
+Vous pouvez maintenant insérer 500 verbes aléatoires dans la database mongodb de votre localhost en utilsant la commande suivante : `npm run seeds`
 
 ## 6 - DEMARRER LE SERVEUR
 Vous pouvez démarrer le serveur en entrant la ligne de commande suivante : `npm run server`
