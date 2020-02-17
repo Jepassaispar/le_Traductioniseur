@@ -69,12 +69,6 @@ Cette application est 100% responsive.
 
 ---
 
-### TEMPS DE REALISATION
-
-Ayant été réalisé en une semaine par petits morceaux, il est difficile d'estimer le temps de réalisation de ce projet, mais il devrait se situer à facilement 1 jour et demi de travail plein.
-
----
-
 ### DIFFICULTES
 
 J'ai d'abord créé ma fonction randomNumber() dans le frontend et je passais le résultat dans le back-end pour l'utiliser comme custom_id lorsque je trouvais un verbe dans la db. Malheureusement le fait de checker le tableau de custom_id déjà utilisés dans le front-end aurait amené à faire des calls dans la db jusqu'à avoir un verbe encore non-utilisé (le temps deviendrait proportionnellement grand à mesure que le nombre de verbe disponilbe diminuerait).
@@ -83,7 +77,13 @@ J'ai été bloqué pendant un bon moment car je passais le mauvais argument à m
 
 Le fait d'utiliser html au lieu d'hbs a été déroutante, sachant que les données ne peuvent être passées par le front en chargeant la page, il a fallu faire la discussion front-back intégralement avec axios.
 
-Les petites erreurs en cours de route m'ont fait perdre le plus de temps, mais le besoin d'arrêter d'installer des features alors que le projet réponds aux attentes est aussi très exigeant :)
+Les petites erreurs en cours de route m'ont fait perdre le plus de temps, mais le besoin d'arrêter d'installer des features ne s'est pas fait beaucoup entendre :) il est possible que j'ai passé plus de temps à perfectionner l'application avec des features non-demandées que sur l'essentiel.
+
+---
+
+### TEMPS DE REALISATION
+
+Ayant été réalisé en une semaine par petits morceaux, il est difficile d'estimer le temps de réalisation de ce projet, mais il devrait se situer à facilement 1 jour et demi de travail plein.
 
 ---
 
