@@ -1,6 +1,6 @@
 # Bienvenue sur le Traductioniseur !
 
-![image](https://www.zupimages.net/up/20/08/397c.png)
+![image](https://zupimages.net/up/20/08/qt9f.png)
 
 ---
 
@@ -35,7 +35,7 @@ Recopiez la ligne suivante dans votre .env tout en remplaçant [PATH] par le che
 GOOGLE_APPLICATION_CREDENTIALS="[PATH]"
 
 ## 5 - INSERER 500 VERBES DE LA LISTE DANS VOTRE DB
-Vous pouvez maintenant insérer 500 verbes aléatoires dans la database mongodb de votre localhost en utilsant la commande suivante : <npm run seeds>
+Vous pouvez maintenant insérer 500 verbes aléatoires dans la database mongodb de votre localhost en utilsant la commande suivante : `npm run seeds`
 
 ## 6 - DEMARRER LE SERVEUR
 Vous pouvez démarrer le serveur en entrant la ligne de commande suivante : `npm run server`
@@ -69,23 +69,29 @@ Cette application est 100% responsive.
 
 ---
 
+### TEMPS DE REALISATION
+
+Ayant été réalisé en une semaine par petits morceaux, il est difficile d'estimer le temps de réalisation de ce projet, mais il devrait se situer à facilement 1 jour et demi de travail plein.
+
+---
+
 ### DIFFICULTES
 
 J'ai d'abord créé ma fonction randomNumber() dans le frontend et je passais le résultat dans le back-end pour l'utiliser comme custom_id lorsque je trouvais un verbe dans la db. Malheureusement le fait de checker le tableau de custom_id déjà utilisés dans le front-end aurait amené à faire des calls dans la db jusqu'à avoir un verbe encore non-utilisé (le temps deviendrait proportionnellement grand à mesure que le nombre de verbe disponilbe diminuerait).
 
-J'ai été bloqué pendant un bon moment car je passais le mauvais argument à ma translate api (ex: je passais "english" au lieu de "en")
+J'ai été bloqué pendant un bon moment car je passais le mauvais argument à ma translate api (ex: je passais "english" au lieu de "en"), l'api google translate a été difficile a appréhander, surtout son utilisation sur une machine locale.
+
+Le fait d'utiliser html au lieu d'hbs a été déroutante, sachant que les données ne peuvent être passées par le front en chargeant la page, il a fallu faire la discussion front-back intégralement avec axios.
+
+Les petites erreurs en cours de route m'ont fait perdre le plus de temps, mais le besoin d'arrêter d'installer des features alors que le projet réponds aux attentes est aussi très exigeant :)
 
 ---
 
 ### FUTUR
 
-Créer une condition <if(translatedVerb === verb)> lors de la recherche du randomVerb qui rechercherait un nouveau randomVerb car dans la liste de verbes, beaucoup ne sont pas traduits par google translate (au risque d'exclure les verbes qui s'écrivent de la même manière dans les 2 langues).
+Créer une condition `if(translatedVerb === verb)` lors de la recherche du randomVerb qui rechercherait un nouveau randomVerb car dans la liste de verbes, beaucoup ne sont pas traduits par google translate (au risque d'exclure les verbes qui s'écrivent de la même manière dans les 2 langues).
 
 Changer le fait d'avoir 2 requêtes au serveur par verbe, je pense que le mieux serait de créer une route qui permettrait de faire les 2 d'un coup, j'ai séparé les routes afin de pouvoir avoir la traduction dynamique du verbe en fonction de la langue choisie.
-
-L'ajout d'une animation qui montrerait directement la complétion sur l'indice (ex: "L O V _") en fonction du remplissage de l'input translate.
-
-L'ajout d'un boutton pour passer le verbe en cours (fonctionne en changeant le niveau mais pas clair pour l'utilisateur)
 
 Ajout de bonus type révéler un caractère aléatoire sur l'indice, envoyer un audio sample avec la sonorité dans la langue, etc.
 
