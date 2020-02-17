@@ -2,8 +2,6 @@ import APIVerb from "./Api-Front/APIVerb.js";
 const verbAPI = new APIVerb("http://localhost:5001");
 
 // GLOBAL VARIABLES
-const win = 1;
-const lose = -1;
 let score = 10;
 let verb;
 let level;
@@ -11,19 +9,24 @@ let translation;
 
 //GLOBAL VARIABLES : ARRAYS
 const levelArray = ["easy", "medium", "hard"];
-const colorArray = ["green", "orange", "red"];
+const colorArray = ["rgba(0, 250, 0, .4)", "orange", "rgb(250, 0, 0, .4 )"];
 let idsArray = [];
 
 // QUERY SELECTORS
-const levelDisplay = document.querySelector(".level.display");
-const spanVerb = document.querySelector(".verbContainer.french > .verb");
-const inputLevel = document.querySelector(".level.input");
+// INPUTS
 const inputLang = document.querySelector(".lang.input");
-const button = document.querySelector(".button.verb");
+const inputLevel = document.querySelector(".level.input");
+const inputVerb = document.querySelector(".verb.input");
+// DISPLAY
+const levelDisplay = document.querySelector(".level.display");
 const scoreDisplay = document.querySelector(".score");
 const helpDisplay = document.querySelector(".help");
+// OTHER
+const spanVerb = document.querySelector(".verbContainer.french > .verb");
+const buttonVerb = document.querySelector(".button.verb");
+const buttonPass = document.querySelector(".button.pass");
 
-// SYNC FUNCTION DECLARATION
+// FUNCTION DECLARATION
 const checkLang = () => {
   return document.querySelector(".input.lang").value;
 };
@@ -43,43 +46,14 @@ const checkGameStatus = () => {
 };
 
 const checkTranslation = e => {
-  const container = e.target.parentNode;
+  let container;
+  e.target ? (container = e.target.parentNode) : buttonVerb;
   const verbInput = container.querySelector(".input.verb").value.toLowerCase();
   if (!verbInput) return alert("entrez une traduction pour jouer");
   checkResult(verbInput === translation);
   container.querySelector(".input.verb").value = "";
 };
 
-const checkResult = result => {
-  if (result) {
-    changeLevel(win);
-    changeScore(win);
-    changeColor(button, "green");
-    changeColor(scoreDisplay, "green");
-  } else {
-    changeLevel(lose);
-    changeScore(lose);
-    changeColor(button, "red");
-    changeColor(scoreDisplay, "red");
-  }
-  setTimeout(changeColor, 2000, button, "#fee");
-  setTimeout(changeColor, 2000, scoreDisplay, "white");
-  checkLevel();
-  checkGameStatus();
-  try {
-    getVerbSmartly();
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-const alertEndGame = message => {
-  alert(message);
-  score = 10;
-  changeScore(0);
-};
-
-// DOM MANIPULATION
 const changeLevel = state => {
   let level = Number(document.querySelector(".input.level").value);
   level += state;
@@ -91,12 +65,27 @@ const changeLevel = state => {
 
 const changeScore = state => {
   score += state;
+  state > 0 ? (state = "win") : (state = "lose");
   scoreDisplay.innerHTML = score;
+  toggleScoreAnimation(state);
+  setTimeout(toggleScoreAnimation, 5000);
+};
+
+const toggleScoreAnimation = state => {
+  scoreDisplay.className = `score ${state || ""}`;
+};
+
+const alertEndGame = message => {
+  alert(message);
+  score = 10;
+  changeScore(0);
 };
 
 const displayHelp = translation => {
-  helpDisplay.innerHTML = translation.split("").reduce((acc, val) => {
-    val === " " ? (val = `&nbsp&nbsp;`) : (val = ` _`);
+  helpDisplay.innerHTML = translation.split("").reduce((acc, val, i) => {
+    val === " "
+      ? (val = `&nbsp&nbsp;`)
+      : (val = `<i class="character char${i}" > _</i>`);
     !acc ? (acc = translation[0]) : (acc += val);
     return acc;
   });
@@ -104,6 +93,30 @@ const displayHelp = translation => {
 
 const displayVerb = verb => {
   spanVerb.innerHTML = verb["french"];
+};
+
+const displayChar = e => {
+  for (var i = 1; i <= translation.length - 1; i++) {
+    const char = helpDisplay.querySelector(`.char${i}`);
+    char
+      ? i < e.target.value.length
+        ? (char.innerHTML = " X")
+        : (char.innerHTML = " _")
+      : null;
+  }
+};
+
+const checkResult = result => {
+  result ? (result = 1) : (result = -1);
+  toggleScoreAnimation();
+  changeLevel(result);
+  changeScore(result);
+  checkGameStatus();
+  try {
+    getVerbSmartly();
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 // DOM MANIPULATION : STYLE
@@ -135,9 +148,13 @@ async function getTranslation() {
 }
 
 // EVENT LISTENENERS
+buttonVerb.onclick = checkTranslation;
+buttonPass.onclick = getVerbSmartly;
 inputLevel.onchange = getVerbSmartly;
 inputLang.onchange = getTranslation;
-button.onclick = checkTranslation;
+inputVerb.onkeyup = function checkKeyPress(e) {
+  e.key === "Enter" ? checkTranslation(e) : displayChar(e);
+};
 
 // INITALISING FIRST CALL AT LOAD
 try {

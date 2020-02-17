@@ -9,7 +9,7 @@
   box-sizing: border-box;
   font-family: 'Odibee Sans', cursive;
   font-size: 1.2rem;
-  color: white;
+  color: grey;
 }
 
 *:focus {
@@ -20,6 +20,7 @@
 .levelContainer,
 .verbContainer,
 .translateContainer,
+.langContainer,
 .button {
   display: flex;
   /* flex-direction: column; */
@@ -30,9 +31,13 @@
 .mainContainer,
 .levelContainer,
 .verbContainer,
+.langContainer,
 .translateContainer {
   flex-direction: column;
   justify-content: space-evenly;
+  max-height: 20%;
+  min-height: 10%;
+  height: 15%;
 }
 
 .translateContainer {
@@ -53,12 +58,13 @@
   }
 }
 
+
 .button {
   min-width: 150px;
   max-height: 40px;
   color: black;
   justify-content: center;
-
+  font-size: 1rem;
 }
 
 .button:hover,
@@ -70,14 +76,18 @@
   color: black;
 }
 
+.help {
+  color: white;
+}
+
+.help .character {
+  color: inherit;
+}
+
 .verb.toTranslate {
   font-weight: 500;
   font-size: 1.5rem;
-}
-
-.levelContainer {
-  height: 20%;
-  min-height: 100px;
+  color: white;
 }
 
 .input {
@@ -88,13 +98,18 @@
 
 .separator {
   height: 1px;
-  background-color: white;
+  background-color: grey;
 }
 
 .separator,
 .input {
   min-width: 250px;
   width: 30vw;
+}
+
+.level.input {
+  min-width: 100px;
+  width: 50%;
 }
 
 
@@ -113,15 +128,14 @@
 }
 
 .logo b,
-.button {
+.score {
   user-select: none;
   font: "Vibur";
   color: #fee;
   text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
 }
 
-.logo b span,
-.button b {
+.logo b span {
   animation: blink linear infinite 2s;
   font-size: inherit;
 }
@@ -131,9 +145,114 @@
   font-size: inherit;
 }
 
-.button b {
-  animation: blink linear infinite 5s;
-  font-size: inherit;
+.score {
+  font-size: 1.5rem;
+}
+
+.win {
+  animation: win ease-in infinite 5s;
+}
+
+.lose {
+  animation: lose ease-in infinite 5s;
+}
+
+@keyframes lose {
+  2% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+
+  8% {
+    color: red;
+  }
+
+  12% {
+    color: inherit;
+  }
+
+  15% {
+    color: red;
+  }
+
+  17% {
+
+    text-shadow: none;
+  }
+
+  18% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+
+  19% {
+    color: red;
+    text-shadow: none;
+  }
+
+  20% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+
+  21% {
+    color: red;
+    text-shadow: none;
+  }
+
+  21.5% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+}
+
+@keyframes win {
+  2% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+
+  8% {
+    color: rgb(0, 250, 250);
+  }
+
+  12% {
+    color: inherit;
+  }
+
+  15% {
+    color: rgb(0, 250, 250);
+  }
+
+  17% {
+
+    text-shadow: none;
+  }
+
+  18% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+
+  19% {
+    color: rgb(0, 250, 250);
+    text-shadow: none;
+  }
+
+  20% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+
+  21% {
+    color: rgb(0, 250, 250);
+    text-shadow: none;
+  }
+
+  21.5% {
+    color: inherit;
+    text-shadow: inherit;
+  }
 }
 
 @keyframes blink {

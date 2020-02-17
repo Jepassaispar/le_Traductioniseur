@@ -20,13 +20,16 @@
 
     <div class="separator"></div>
 
-    <div class="langContainer">Choisis une langue</div>
-    <select id="lang" name="lang" class="lang input">
-      <option class="select" value="en">Anglais</option>
-      <option class="select" value="it">Italien</option>
-      <option class="select" value="de">Allemand</option>
-      <option class="select" value="es">Espagnol</option>
-    </select>
+    <div class="langContainer">
+      <div class="lang label">Choisis une langue</div>
+      <select id="lang" name="lang" class="lang input">
+        <option class="select" value="en">Anglais</option>
+        <option class="select" value="it">Italien</option>
+        <option class="select" value="de">Allemand</option>
+        <option class="select" value="es">Espagnol</option>
+      </select>
+    </div>
+    <div class="separator"></div>
 
     <div class="levelContainer">
       <label for="level" class="selectLevel">Choisis le niveau</label>
@@ -38,12 +41,15 @@
 
     <div class="verbContainer french">
       Verbe à traduire : <span class="verb toTranslate"></span>
+      <button class="button pass">Passer le verbe</button>
     </div>
+
+    <div class="separator"></div>
 
     <div class="translateContainer">
       <input type="text" class="verb input" name="verb" placeholder="traduction..." />
       <span class="help"></span>
-      <button class="button verb">G<b>O</b></button>
+      <button class="button verb">GO</button>
     </div>
 
     <div class="separator"></div>
