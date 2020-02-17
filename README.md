@@ -62,7 +62,7 @@ Les verbes insérés dans la database sont aléatoirement choisis parmi la liste
 Tant que la page n'est pas rafraichie, le même verbe ne sera pas utilisé 2 fois.
 
 #### Choix de langue :
-Si vous ne conaissez pas la traduction en anglais, vous pouvez toujours choisir parmi 3 autres langues (espagnol, allemand, italien).
+Si vous ne connaissez pas la traduction en anglais, vous pouvez toujours choisir parmi 3 autres langues (espagnol, allemand, italien).
 
 #### Responsive :
 Cette application est 100% responsive.
