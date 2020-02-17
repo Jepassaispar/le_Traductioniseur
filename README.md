@@ -1,17 +1,17 @@
-#Bienvenue sur le_Traductioniseur !
+# Bienvenue sur le_Traductioniseur !
 
-![image]('https://zupimages.net/viewer.php?id=20/08/397c.png')
+![image]('https://www.zupimages.net/up/20/08/397c.png')
 
 ---
 
 Follow the steps for an installation of this program on your local machine :
 
-##1 - CLONEZ LE REPO
+## 1 - CLONEZ LE REPO
 - Clonez le repo sur votre machine
 - Allez dans le nouveau dossier
 - Dans votre console, entrez la ligne de commande suivante : <npm i>
 
-##2 - CREEZ VOTRE FICHIER .env
+## 2 - CREEZ VOTRE FICHIER .env
 - Comme précédemment, entrez la ligne de commande suivante : <touch .env>
 - Dans le nouveau fichier .env créé, copiez-collez les informations suivantes :
 
@@ -21,27 +21,27 @@ MONGO_COLLECTION = "verbs"
 PORT = 5001
 VERB_NUMBER = 500
 
-##3 - CREER UNE CLE DE COMPTE DE SERVICE GOOGLE
+## 3 - CREER UNE CLE DE COMPTE DE SERVICE GOOGLE
 ###Si vous n'avez pas accès à la google translate api : 
 rendez-vous sur cette page et suivez les instructions jusqu'à avoir fini : "Utiliser le fichier de clé de compte de service dans votre environnement"
 https://cloud.google.com/translate/docs/advanced/setup-advanced
 
-###Si vous avez déjà une clé de compte de service google:
+### Si vous avez déjà une clé de compte de service google:
 allez directement à cette étape :
 https://cloud.google.com/translate/docs/advanced/setup-advanced#use_the_service_account_key_file_in_your_environment
 
-##4 - INTEGREZ LE PATH DE VOTRE KEY DANS VOTRE .ENV
+## 4 - INTEGREZ LE PATH DE VOTRE KEY DANS VOTRE .ENV
 Recopiez la ligne suivante dans votre .env tout en remplaçant [PATH] par le chemin vers le fichier de votre clé google :
 GOOGLE_APPLICATION_CREDENTIALS="[PATH]"
 
-##5 - INSERER 500 VERBES DE LA LISTE DANS VOTRE DB
+## 5 - INSERER 500 VERBES DE LA LISTE DANS VOTRE DB
 Vous pouvez maintenant insérer 500 verbes aléatoires dans la database mongodb de votre localhost en utilsant la commande suivante : <npm run seeds>
 
-##6 - DEMARREZ LE SERVEUR
+## 6 - DEMARREZ LE SERVEUR
 Vous pouvez démarrer le serveur en entrant la ligne de commande suivante : <npm run server>
 Le lien vers le site devrait apparaître dans la console du serveur, cliquez dessus et amusez-vous <3
 
-#HISTOIRE DU PROJET
+# HISTOIRE DU PROJET
 
 Je n'ai pas encore travaillé avec beaucoup d'api complexes, j'ai décidé d'utiliser l'api de google translate afin d'avoir une idée de l'utilisation de google cloud.
 
@@ -51,23 +51,23 @@ J'ai réalisé des APIHandler afin de faciliter l'utilisation des fonctions asyn
 
 ---
 
-###FEATURES
+### FEATURES
 
-####Random DB :
+#### Random DB :
 Les verbes insérés dans la database sont aléatoirement choisis parmi la liste de milliers de verbes.
 
-####Smart querying :
+#### Smart querying :
 Tant que la page n'est pas rafraichie, le même verbe ne sera pas utilisé 2 fois.
 
-####Choix de langue :
+#### Choix de langue :
 Si vous ne conaissez pas la traduction en anglais, vous pouvez toujours choisir parmi 3 autres langues (espagnol, allemand, italien).
 
-####Responsive :
+#### Responsive :
 Cette application est 100% responsive.
 
 ---
 
-###DIFFICULTES
+### DIFFICULTES
 
 J'ai d'abord créé ma fonction randomNumber() dans le frontend et je passais le résultat dans le back-end pour l'utiliser comme custom_id lorsque je trouvais un verbe dans la db. Malheureusement le fait de checker le tableau de custom_id déjà utilisés dans le front-end aurait amené à faire des calls dans la db jusqu'à avoir un verbe encore non-utilisé (le temps deviendrait proportionnellement grand à mesure que le nombre de verbe disponilbe diminuerait).
 
@@ -75,7 +75,7 @@ J'ai été bloqué pendant un bon moment car je passais le mauvais argument à m
 
 ---
 
-###FUTUR
+### FUTUR
 
 Créer une condition <if(translatedVerb === verb)> lors de la recherche du randomVerb qui rechercherait un nouveau randomVerb car dans la liste de verbes, beaucoup ne sont pas traduits par google translate (au risque d'exclure les verbes qui s'écrivent de la même manière dans les 2 langues).
 
