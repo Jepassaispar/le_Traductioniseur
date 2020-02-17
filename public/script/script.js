@@ -49,7 +49,7 @@ const checkTranslation = e => {
   let container;
   e.target ? (container = e.target.parentNode) : buttonVerb;
   const verbInput = container.querySelector(".input.verb").value.toLowerCase();
-  if (!verbInput) return alert("entrez une traduction pour jouer");
+  if (!verbInput) return alert("entre une traduction avant d'envoyer");
   checkResult(verbInput === translation);
   container.querySelector(".input.verb").value = "";
 };
