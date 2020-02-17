@@ -6,12 +6,12 @@
 
 Suivez les étapes suivante afin d'installer ce programme sur votre machine :
 
-## 1 - CLONEZ LE REPO
+## 1 - CLONER LE REPO
 - Clonez le repo sur votre machine
 - Allez dans le nouveau dossier
 - Dans votre console, entrez la ligne de commande suivante : `npm`
 
-## 2 - CREEZ VOTRE FICHIER .env
+## 2 - CREER UN FICHIER .env
 - Comme précédemment, entrez la ligne de commande suivante : `touch .env`
 - Dans le nouveau fichier .env créé, copiez-collez les informations suivantes :
 ```
@@ -30,15 +30,15 @@ https://cloud.google.com/translate/docs/advanced/setup-advanced
 allez directement à cette étape :
 https://cloud.google.com/translate/docs/advanced/setup-advanced#use_the_service_account_key_file_in_your_environment
 
-## 4 - INTEGREZ LE PATH DE VOTRE KEY DANS VOTRE .ENV
+## 4 - INTEGRER LE PATH DE VOTRE KEY DANS LE .ENV
 Recopiez la ligne suivante dans votre .env tout en remplaçant [PATH] par le chemin vers le fichier de votre clé google :
 GOOGLE_APPLICATION_CREDENTIALS="[PATH]"
 
 ## 5 - INSERER 500 VERBES DE LA LISTE DANS VOTRE DB
 Vous pouvez maintenant insérer 500 verbes aléatoires dans la database mongodb de votre localhost en utilsant la commande suivante : <npm run seeds>
 
-## 6 - DEMARREZ LE SERVEUR
-Vous pouvez démarrer le serveur en entrant la ligne de commande suivante : <npm run server>
+## 6 - DEMARRER LE SERVEUR
+Vous pouvez démarrer le serveur en entrant la ligne de commande suivante : `npm run server`
 Le lien vers le site devrait apparaître dans la console du serveur, cliquez dessus et amusez-vous <3
 
 ---
