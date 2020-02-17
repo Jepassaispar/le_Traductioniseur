@@ -1,0 +1,178 @@
+@font-face {
+  font-family: Ultra;
+  src: url(../Ultra/Ultra.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Odibee Sans', cursive;
+  font-size: 1.2rem;
+  color: white;
+}
+
+*:focus {
+  outline: 0;
+}
+
+.mainContainer,
+.levelContainer,
+.verbContainer,
+.translateContainer,
+.button {
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: space-evenly; */
+  align-items: center;
+}
+
+.mainContainer,
+.levelContainer,
+.verbContainer,
+.translateContainer {
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.translateContainer {
+  min-height: 100px;
+}
+
+.mainContainer {
+  min-height: 100px;
+  min-width: 100px;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .9)), url(https://media1.giphy.com/media/lSzQjkthGS1gc/giphy.gif) center repeat-x;
+  background-size: contain;
+}
+
+@media (max-width: 470px) {
+  .mainContainer {
+    background-size: cover;
+  }
+}
+
+.button {
+  min-width: 150px;
+  max-height: 40px;
+  color: black;
+  justify-content: center;
+
+}
+
+.button:hover,
+.level.input:hover {
+  cursor: pointer
+}
+
+.select {
+  color: black;
+}
+
+.verb.toTranslate {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.levelContainer {
+  height: 20%;
+  min-height: 100px;
+}
+
+.input {
+  min-height: 30px;
+  padding: 0 10px;
+  color: black;
+}
+
+.separator {
+  height: 1px;
+  background-color: white;
+}
+
+.separator,
+.input {
+  min-width: 250px;
+  width: 30vw;
+}
+
+
+@import url(//fonts.googleapis.com/css?family=Vibur);
+
+.logo {
+  text-align: center;
+  user-select: none;
+  font-size: 1.5rem;
+  display: inline-block;
+}
+
+.logo b {
+  font-size: 1.6rem;
+  color: rgba(200, 0, 0, .2)
+}
+
+.logo b,
+.button {
+  user-select: none;
+  font: "Vibur";
+  color: #fee;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
+}
+
+.logo b span,
+.button b {
+  animation: blink linear infinite 2s;
+  font-size: inherit;
+}
+
+.logo b span:nth-of-type(2) {
+  animation: blink linear infinite 3s;
+  font-size: inherit;
+}
+
+.button b {
+  animation: blink linear infinite 5s;
+  font-size: inherit;
+}
+
+@keyframes blink {
+  78% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+
+  79% {
+    color: #333;
+  }
+
+  80% {
+
+    text-shadow: none;
+  }
+
+  81% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+
+  82% {
+    color: #333;
+    text-shadow: none;
+  }
+
+  83% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+
+  92% {
+    color: #333;
+    text-shadow: none;
+  }
+
+  92.5% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+}

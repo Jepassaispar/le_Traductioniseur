@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script type="module" src="/script/script.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lacquer&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style/style.css" />
+  <title>Traductioniseur</title>
+</head>
+
+<body>
+  <div class="mainContainer">
+    <header class="header">
+      Bienvenue sur&nbsp;<div class="logo"><b>Le T<span>ra</span>duction<span>i</span>seur</b></div>
+    </header>
+
+    <div class="separator"></div>
+
+    <div class="langContainer">Choisis une langue</div>
+    <select id="lang" name="lang" class="lang input">
+      <option class="select" value="en">Anglais</option>
+      <option class="select" value="it">Italien</option>
+      <option class="select" value="de">Allemand</option>
+      <option class="select" value="es">Espagnol</option>
+    </select>
+
+    <div class="levelContainer">
+      <label for="level" class="selectLevel">Choisis le niveau</label>
+      <input type="range" class="level input medium" min="0" max="2" value="1" />
+      <span class="level display">Pas de niveau sélectionné</span>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="verbContainer french">
+      Verbe à traduire : <span class="verb toTranslate"></span>
+    </div>
+
+    <div class="translateContainer">
+      <input type="text" class="verb input" name="verb" placeholder="traduction..." />
+      <span class="help"></span>
+      <button class="button verb">G<b>O</b></button>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="scoreContainer">Score: <span class="score">10</span></div>
+  </div>
+</body>
+
+</html>
