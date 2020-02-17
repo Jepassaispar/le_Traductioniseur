@@ -1,6 +1,6 @@
 # Bienvenue sur le Traductioniseur !
 
-![image](https://www.zupimages.net/up/20/08/397c.png)
+![image](https://zupimages.net/up/20/08/1aix.gif)
 
 ---
 
@@ -84,8 +84,6 @@ Créer une condition <if(translatedVerb === verb)> lors de la recherche du rando
 Changer le fait d'avoir 2 requêtes au serveur par verbe, je pense que le mieux serait de créer une route qui permettrait de faire les 2 d'un coup, j'ai séparé les routes afin de pouvoir avoir la traduction dynamique du verbe en fonction de la langue choisie.
 
 L'ajout d'une animation qui montrerait directement la complétion sur l'indice (ex: "L O V _") en fonction du remplissage de l'input translate.
-
-L'ajout d'un boutton pour passer le verbe en cours (fonctionne en changeant le niveau mais pas clair pour l'utilisateur)
 
 Ajout de bonus type révéler un caractère aléatoire sur l'indice, envoyer un audio sample avec la sonorité dans la langue, etc.
 
