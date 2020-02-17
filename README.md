@@ -1,6 +1,6 @@
 # Bienvenue sur le Traductioniseur !
 
-![image](https://zupimages.net/up/20/08/1aix.gif)
+![image](https://zupimages.net/up/20/08/lo9j.png)
 
 ---
 
