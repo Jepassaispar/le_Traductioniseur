@@ -9,7 +9,7 @@ Suivez les étapes suivante afin d'installer ce programme sur votre machine :
 ## 1 - CLONER LE REPO
 - Clonez le repo sur votre machine
 - Allez dans le nouveau dossier
-- Dans votre console, entrez la ligne de commande suivante : `npm`
+- Dans votre console, entrez la ligne de commande suivante : `npm i`
 
 ## 2 - CREER UN FICHIER .env
 - Comme précédemment, entrez la ligne de commande suivante : `touch .env`
