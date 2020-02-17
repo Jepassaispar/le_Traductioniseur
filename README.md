@@ -4,25 +4,25 @@
 
 ---
 
-Follow the steps for an installation of this program on your local machine :
+Suivez les étapes suivante afin d'installer ce programme sur votre machine :
 
 ## 1 - CLONEZ LE REPO
 - Clonez le repo sur votre machine
 - Allez dans le nouveau dossier
-- Dans votre console, entrez la ligne de commande suivante : <npm i>
+- Dans votre console, entrez la ligne de commande suivante : `npm`
 
 ## 2 - CREEZ VOTRE FICHIER .env
-- Comme précédemment, entrez la ligne de commande suivante : <touch .env>
+- Comme précédemment, entrez la ligne de commande suivante : `touch .env`
 - Dans le nouveau fichier .env créé, copiez-collez les informations suivantes :
-
+```
 BASIC_URL = http://localhost"
 MONGO_URI = "mongodb://localhost/"
 MONGO_COLLECTION = "verbs"
 PORT = 5001
 VERB_NUMBER = 500
-
+```
 ## 3 - CREER UNE CLE DE COMPTE DE SERVICE GOOGLE
-###Si vous n'avez pas accès à la google translate api : 
+### Si vous n'avez pas accès à la google translate api : 
 rendez-vous sur cette page et suivez les instructions jusqu'à avoir fini : "Utiliser le fichier de clé de compte de service dans votre environnement"
 https://cloud.google.com/translate/docs/advanced/setup-advanced
 
@@ -41,7 +41,9 @@ Vous pouvez maintenant insérer 500 verbes aléatoires dans la database mongodb 
 Vous pouvez démarrer le serveur en entrant la ligne de commande suivante : <npm run server>
 Le lien vers le site devrait apparaître dans la console du serveur, cliquez dessus et amusez-vous <3
 
-# HISTOIRE DU PROJET
+---
+
+### HISTOIRE DU PROJET
 
 Je n'ai pas encore travaillé avec beaucoup d'api complexes, j'ai décidé d'utiliser l'api de google translate afin d'avoir une idée de l'utilisation de google cloud.
 
