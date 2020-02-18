@@ -29,6 +29,7 @@ function randomLevel() {
 
 // simple function to send data to the database once and get a message back
 function sendDataOnce(data, model, win) {
+  console.log(data);
   model
     .insertMany(data)
     .then(console.log(win))
@@ -44,6 +45,7 @@ mongoose
   })
   .then(x => {
     fs.readFile("./bin/verb.txt", "utf-8", (err, data) => {
+      console.log(data);
       if (err) return console.log(err);
       verbArray = data.split("\r\n");
       shuffle(verbArray);
@@ -56,11 +58,11 @@ mongoose
         };
         dataVerbs.push(verbObject);
       });
-      sendDataOnce(
-        dataVerbs,
-        verbModel,
-        `${verbNumber} verbs inseterted at ${x.connections[0].name}`
-      );
+      // sendDataOnce(
+      //   dataVerbs,
+      //   verbModel,
+      //   `${verbNumber} verbs inseterted at ${x.connections[0].name}`
+      // );
     });
   })
   .catch(err => {
