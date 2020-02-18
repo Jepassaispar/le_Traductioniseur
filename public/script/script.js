@@ -50,8 +50,6 @@ const checkTranslation = e => {
   e.target ? (container = e.target.parentNode) : buttonVerb;
   const verbInput = container.querySelector(".input.verb").value.toLowerCase();
   if (!verbInput) return alert("entre une traduction avant d'envoyer");
-  console.log(verbInput);
-  console.log(translation);
   checkResult(verbInput === translation);
   container.querySelector(".input.verb").value = "";
 };
