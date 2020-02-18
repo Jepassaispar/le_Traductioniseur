@@ -130,7 +130,6 @@ const changeColor = (element, color) => {
 async function getVerbRandomly() {
   const res = await verbAPI.getVerbRandomly();
   verb = res.data;
-  verb.french.slice(verb.french.length - 1, 1);
   idsArray.push(verb.custom_id);
   displayVerb(verb);
   await getTranslation(verb, "en");
@@ -140,7 +139,6 @@ async function getVerbSmartly(e) {
   if (e) inputVerb.value = "";
   const res = await verbAPI.getVerbSmartly(checkLevel(), idsArray);
   verb = res.data;
-  verb.french.slice(verb.french.length - 1, 1);
   idsArray.push(verb.custom_id);
   displayVerb(verb);
   await getTranslation(verb, checkLang());
@@ -150,8 +148,6 @@ async function getTranslation() {
   const res = await verbAPI.getTranslation(verb, checkLang());
   translation = res.data;
   translation = translation.slice(0, translation.length - 1);
-  console.log(translation);
-  console.log(translation.length);
   displayHelp(translation);
 }
 
