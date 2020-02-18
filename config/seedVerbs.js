@@ -59,7 +59,7 @@ mongoose
       sendDataOnce(
         dataVerbs,
         verbModel,
-        `${verbNumber} verbs inseterted at ${x.connections[0].name}`
+        `${verbNumber} verbs inserted at ${x.connections[0].name}`
       );
     });
   })
