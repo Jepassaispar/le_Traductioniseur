@@ -23,11 +23,11 @@ VERB_NUMBER = 500
 ```
 ## 3 - CREER UNE CLE DE COMPTE DE SERVICE GOOGLE
 ### Si vous n'avez pas accès à la google translate api : 
-rendez-vous sur cette page et suivez les instructions jusqu'à avoir fini : "Utiliser le fichier de clé de compte de service dans votre environnement"
+rendez-vous sur cette page et suivez les instructions jusqu'à avoir fini : "Utiliser le fichier de clé de compte de service dans votre environnement" (SUIVEZ SIMPLEMENT LES ETAPES, PAS BESOIN DE LIRE L'INFORMATIF)
 https://cloud.google.com/translate/docs/advanced/setup-advanced
 
 ### Si vous avez déjà une clé de compte de service google:
-allez directement à cette étape :
+allez directement à l'étape : "Utiliser le fichier de clé de compte de service dans votre environnement"
 https://cloud.google.com/translate/docs/advanced/setup-advanced#use_the_service_account_key_file_in_your_environment
 
 ## 4 - INTEGRER LE PATH DE VOTRE KEY DANS LE .ENV
