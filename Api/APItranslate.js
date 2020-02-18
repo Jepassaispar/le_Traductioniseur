@@ -5,6 +5,10 @@ const translate = new Translate();
 async function translateText(text, target) {
   try {
     let translation = await translate.translate(text, target);
+    console.log(text);
+    console.log(text.length);
+    console.log(translation[0]);
+    console.log(translation[0].length);
     return translation[0];
   } catch (err) {
     console.log(err);

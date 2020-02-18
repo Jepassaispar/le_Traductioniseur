@@ -50,6 +50,8 @@ const checkTranslation = e => {
   e.target ? (container = e.target.parentNode) : buttonVerb;
   const verbInput = container.querySelector(".input.verb").value.toLowerCase();
   if (!verbInput) return alert("entre une traduction avant d'envoyer");
+  console.log(verbInput);
+  console.log(translation);
   checkResult(verbInput === translation);
   container.querySelector(".input.verb").value = "";
 };
@@ -128,14 +130,17 @@ const changeColor = (element, color) => {
 async function getVerbRandomly() {
   const res = await verbAPI.getVerbRandomly();
   verb = res.data;
+  verb.french.slice(verb.french.length - 1, 1);
   idsArray.push(verb.custom_id);
   displayVerb(verb);
   await getTranslation(verb, "en");
 }
 
 async function getVerbSmartly(e) {
+  if (e) inputVerb.value = "";
   const res = await verbAPI.getVerbSmartly(checkLevel(), idsArray);
   verb = res.data;
+  verb.french.slice(verb.french.length - 1, 1);
   idsArray.push(verb.custom_id);
   displayVerb(verb);
   await getTranslation(verb, checkLang());
@@ -144,6 +149,9 @@ async function getVerbSmartly(e) {
 async function getTranslation() {
   const res = await verbAPI.getTranslation(verb, checkLang());
   translation = res.data;
+  translation = translation.slice(0, translation.length - 1);
+  console.log(translation);
+  console.log(translation.length);
   displayHelp(translation);
 }
 
