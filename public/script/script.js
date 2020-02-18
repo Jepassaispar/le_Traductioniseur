@@ -133,7 +133,8 @@ async function getVerbRandomly() {
   await getTranslation(verb, "en");
 }
 
-async function getVerbSmartly() {
+async function getVerbSmartly(e) {
+  if (e) inputVerb.value = "";
   const res = await verbAPI.getVerbSmartly(checkLevel(), idsArray);
   verb = res.data;
   idsArray.push(verb.custom_id);
@@ -144,13 +145,22 @@ async function getVerbSmartly() {
 async function getTranslation() {
   const res = await verbAPI.getTranslation(verb, checkLang());
   translation = res.data;
+  translation = translation.slice(0, translation.length - 1);
   displayHelp(translation);
 }
 
 // EVENT LISTENENERS
+try {
+  buttonPass.onclick = getVerbSmartly;
+} catch (err) {
+  console.log(err);
+}
+try {
+  inputLevel.onchange = getVerbSmartly;
+} catch (err) {
+  console.log(err);
+}
 buttonVerb.onclick = checkTranslation;
-buttonPass.onclick = getVerbSmartly;
-inputLevel.onchange = getVerbSmartly;
 inputLang.onchange = getTranslation;
 inputVerb.onkeyup = function checkKeyPress(e) {
   e.key === "Enter" ? checkTranslation(e) : displayChar(e);

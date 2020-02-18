@@ -45,7 +45,7 @@ mongoose
   .then(x => {
     fs.readFile("./bin/verb.txt", "utf-8", (err, data) => {
       if (err) return console.log(err);
-      verbArray = data.split("\r\n");
+      verbArray = data.split("\n");
       shuffle(verbArray);
       resizeArray(verbArray, verbNumber);
       verbArray.map((verb, i) => {
