@@ -134,7 +134,6 @@ async function getVerbRandomly() {
 }
 
 async function getVerbSmartly(e) {
-  if (e)
   const res = await verbAPI.getVerbSmartly(checkLevel(), idsArray);
   verb = res.data;
   idsArray.push(verb.custom_id);
