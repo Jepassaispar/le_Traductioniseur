@@ -94,7 +94,7 @@ fs.readFile(verbFile, "utf-8", (err, data) => {
 ```
 verbArray = data.split("\r\n");
 ```
-Un seul objet s'est inséré avec tous les verbes, j'ai réglé le problème en enlevant le `\r` mais tous mes verbes comptent un espace à la fin, j'ai réglé le problème en front-end le temps de trouver un correctif.
+Un seul objet s'est inséré avec tous les verbes, j'ai réglé le problème en enlevant le `\r` mais tous mes verbes comptent un espace à la fin, j'ai réglé le problème en front-end le temps de trouver un correctif (EDIT: correctif appliqué dans le back-end avant de passer les données).
 
 ---
 
