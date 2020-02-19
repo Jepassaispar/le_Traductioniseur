@@ -71,19 +71,37 @@ Cette application est 100% responsive.
 
 ### DIFFICULTES
 
-J'ai d'abord créé ma fonction randomNumber() dans le frontend et je passais le résultat dans le back-end pour l'utiliser comme custom_id lorsque je trouvais un verbe dans la db. Malheureusement le fait de checker le tableau de custom_id déjà utilisés dans le front-end aurait amené à faire des calls dans la db jusqu'à avoir un verbe encore non-utilisé (le temps deviendrait proportionnellement grand à mesure que le nombre de verbe disponilbe diminuerait).
+1. J'ai d'abord créé ma fonction randomNumber() dans le frontend et je passais le résultat dans le back-end pour l'utiliser comme custom_id lorsque je trouvais un verbe dans la db. Malheureusement le fait de checker le tableau de custom_id déjà utilisés dans le front-end aurait amené à faire des calls dans la db jusqu'à avoir un verbe encore non-utilisé (le temps deviendrait proportionnellement grand à mesure que le nombre de verbe disponilbe diminuerait).
 
-J'ai été bloqué pendant un bon moment car je passais le mauvais argument à ma translate api (ex: je passais "english" au lieu de "en"), l'api google translate a été difficile a appréhander, surtout son utilisation sur une machine locale.
+2. J'ai été bloqué pendant un bon moment car je passais le mauvais argument à ma translate api (ex: je passais "english" au lieu de "en"), l'api google translate a été difficile a appréhander, surtout son utilisation sur une machine locale.
 
-Le fait d'utiliser html au lieu d'hbs a été déroutante, sachant que les données ne peuvent être passées par le front en chargeant la page, il a fallu faire la discussion front-back intégralement avec axios.
+3. Le fait d'utiliser html au lieu d'hbs a été déroutant, sachant que les données ne peuvent être passées par le front en chargeant la page, il a fallu faire la discussion front-back intégralement avec axios.
 
-Les petites erreurs en cours de route m'ont fait perdre le plus de temps, mais le besoin d'arrêter d'installer des features ne s'est pas fait beaucoup entendre :) il est possible que j'ai passé plus de temps à perfectionner l'application avec des features non-demandées que sur l'essentiel.
+4. Les petites erreurs en cours de route m'ont fait perdre le plus de temps, mais le besoin d'arrêter d'installer des features ne s'est pas fait beaucoup entendre :) il est possible que j'ai passé plus de temps à perfectionner l'application avec des features non-demandées que sur l'essentiel.
+
+5. J'ai fait le choix de ne pas modifier le fichier texte contenant les verbes, le fait d'avoir un file system pour le traiter a amené plusieurs points problématiques pour moi (voir fichier seedVerbs.js) :
+- J'ai passé un bon moment à débugger le fait que je passais une constante qui requérait un url
+```
+const verbFile = require ("./bin/verb.txt");
+fs.readFile(verbFile, "utf-8", (err, data) => {
+```
+au lieu de l'url
+```
+const verbFile = "./bin/verb.txt";
+fs.readFile(verbFile, "utf-8", (err, data) => {
+```
+- Il s'est aussi posé un problème lors de la phase de test, certaines personnes à qui je l'ai fait testé avaient un bug d'insertion dans leur base de donnée dû à cette ligne
+```
+verbArray = data.split("\r\n");
+```
+Un seul objet s'est inséré avec tous les verbes, j'ai réglé le problème en enlevant le `\r` mais tous mes verbes comptent un espace à la fin, j'ai réglé le problème en front-end le temps de trouver un correctif.
 
 ---
 
 ### TEMPS DE REALISATION
 
-Ayant été réalisé en une semaine par petits morceaux, il est difficile d'estimer le temps de réalisation de ce projet, mais il devrait se situer à facilement 1 jour et demi de travail plein.
+Ayant été réalisé en une semaine par petits morceaux, il est difficile d'estimer le temps de réalisation de ce projet, mais il devrait se situer entre 6 et 8h de travail plein.
+(J'avais d'abord estimé 1 jour 1/2 de travail, mais après comptage il s'est révélé que c'était une approximation très élevée).
 
 ---
 
