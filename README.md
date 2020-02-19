@@ -83,7 +83,8 @@ Les petites erreurs en cours de route m'ont fait perdre le plus de temps, mais l
 
 ### TEMPS DE REALISATION
 
-Ayant été réalisé en une semaine par petits morceaux, il est difficile d'estimer le temps de réalisation de ce projet, mais il devrait se situer à facilement 1 jour et demi de travail plein.
+Ayant été réalisé en une semaine par petits morceaux, il est difficile d'estimer le temps de réalisation de ce projet, mais il devrait se situer à environ 6h de travail plein.
+(J'avais d'abord estimé 1 jour 1/2 de travail, mais après comptage il s'est révélé que c'était une approximation très élevée).
 
 ---
 
