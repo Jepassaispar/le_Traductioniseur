@@ -40,7 +40,8 @@ function sendDataOnce(data, model, win) {
 // I had a hard time here as I was passing as 1st argument to the readFile function a var verbFile = require("../bin/verb.txt") and it was throwing an unexpecting token error when it came to the verb "s'abaisser". If I have been more carefull I would not have waisted that much time on that.
 mongoose
   .connect(`${process.env.MONGO_URI}${process.env.MONGO_COLLECTION}`, {
-    userNewUrlParser: true
+    userNewUrlParser: true,
+    useCreateIndex: true
   })
   .then(x => {
     fs.readFile("./bin/verb.txt", "utf-8", (err, data) => {
@@ -49,12 +50,12 @@ mongoose
       shuffle(verbArray);
       resizeArray(verbArray, verbNumber);
       verbArray.map((verb, i) => {
-        var verbObject = {
-          french: verb,
+        const slicedVerb = verb.slice(0, verb.length - 1);
+        dataVerbs.push({
+          french: slicedVerb,
           level: randomLevel(),
           custom_id: i + 1
-        };
-        dataVerbs.push(verbObject);
+        });
       });
       sendDataOnce(
         dataVerbs,

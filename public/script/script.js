@@ -145,7 +145,7 @@ async function getVerbSmartly(e) {
 async function getTranslation() {
   const res = await verbAPI.getTranslation(verb, checkLang());
   translation = res.data;
-  translation = translation.slice(0, translation.length - 1);
+  // translation = translation.slice(0, translation.length - 1);
   displayHelp(translation);
 }
 

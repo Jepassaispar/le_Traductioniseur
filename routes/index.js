@@ -58,8 +58,6 @@ router.post("/translate", (req, res, next) => {
   const lang = req.body.lang;
   async function translateAndSend(text, target) {
     const translation = await APItranslate(text.french, target);
-    console.log(translation);
-    console.log(translation.length);
     res.json(translation.toLowerCase());
   }
   translateAndSend(verbToTranslate, lang);
